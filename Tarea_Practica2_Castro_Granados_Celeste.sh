@@ -2,40 +2,40 @@
 mkdir Practica2_Celeste
 #Nos cambiamos al mismo
 cd Practica2_Celeste
-#Para el n鷐ero 1 primero creamos un archivo vac韔 llamado linux.etc con el comando touch 
+#Para el n煤mero 1 primero creamos un archivo vac铆o llamado linux.etc con el comando touch 
 touch linux.etc
-#Ahora usamos grep para buscar el patr髇 "daemon" dentro del directorio etc y con > redireccionamos todas las rutas de los archivos con este patr髇 a nuestro archivo linux.etc
-#Con -H lo que le decimos es que busque nombre y direcci髇, y con -r le informamos que va a buscar en un directorio
+#Ahora usamos grep para buscar el patr贸n "daemon" dentro del directorio etc y con > redireccionamos todas las rutas de los archivos con este patr贸n a nuestro archivo linux.etc
+#Con -H lo que le decimos es que busque nombre y direcci贸n, y con -r le informamos que va a buscar en un directorio
 grep -H -r "daemon" /etc > linux.etc
-#Con el siguiente comando va  buscar los archivos que tengan la palabra "linux" dentro del directorio etc, despu閟 usamos un pipe para conectar la salida del primer comando con el segundo 
-#En el segundo comando que es el segundo grep le decimos que aparte de lo indicado en el primer grep, tambi閚 busque los archivos que tengan extensi髇 ".conf" 
-#Por 鷏timo usamos doble >> para que redireccione las rutas de los archivos que acaba de encontrar a linux.etc pero sin borrar lo que ya exist韆 en 閘
+#Con el siguiente comando va  buscar los archivos que tengan la palabra "linux" dentro del directorio etc, despu茅s usamos un pipe para conectar la salida del primer comando con el segundo 
+#En el segundo comando que es el segundo grep le decimos que aparte de lo indicado en el primer grep, tambi茅n busque los archivos que tengan extensi贸n ".conf" 
+#Por 煤ltimo usamos doble >> para que redireccione las rutas de los archivos que acaba de encontrar a linux.etc pero sin borrar lo que ya exist铆a en 茅l
 grep -H -r "linux" /etc | grep -H -r "*.conf" >> linux.etc
-#Finalmente, para terminar con el n鷐ero 1, usamos el siguiente grep para filtrar la informaci髇 del usuario analizando el archivo etc/passwd, en este caso usamos "Celeste" debido a que mi usuario es Celeste
+#Finalmente, para terminar con el n煤mero 1, usamos el siguiente grep para filtrar la informaci贸n del usuario analizando el archivo etc/passwd, en este caso usamos "Celeste" debido a que mi usuario es Celeste
 grep -r "Celeste" /etc/passwd
-#Continuamos con el n鷐ero 2, en este caso vamos a buscar con el comando find
+#Continuamos con el n煤mero 2, en este caso vamos a buscar con el comando find
 #Para el primer find usamos -perm para buscar por permisos, que en este caso buscamos archivos que tengan todos los permisos, por eso usamos 777
 find /usr -perm 777
-#Para este otro find vamos a buscar por nombre, por eso usamos -name, buscamos los archivos con la extensio磏 "*.tar"
+#Para este otro find vamos a buscar por nombre, por eso usamos -name, buscamos los archivos con la extensi贸n "*.tar"
 find /var -name "*.tar"
-#Para el n鷐ero 3, creamos primero un archivo llamado Mis procesos.prs
+#Para el n煤mero 3, creamos primero un archivo llamado Mis procesos.prs
 touch Misprocesos.prs
-#Ahora el comando ps nos muestra los procesos del usuario que est閚 activos, con -f da un listado de los procesos que est閚 siendo ejecutados en nuestra sesi髇 y con -u se refiere a los procesos del usuario
+#Ahora el comando ps nos muestra los procesos del usuario que est茅n activos, con -f da un listado de los procesos que est茅n siendo ejecutados en nuestra sesi贸n y con -u se refiere a los procesos del usuario
 #Todo esto lo vamos a direccionar a nuestro archivo que acabamos de crear mediante un >
 ps -fu > Misprocesos.prs
-#Para el n鷐ero 4, vamos a cambiar permisos, usando el comando chmod
-#El  primer chmod lo hacemos usando el m閠odo octal, y decimos que todos los permisos para el due駉, y ejecuci髇 para grupo y otros al archivo linux.etc
+#Para el n煤mero 4, vamos a cambiar permisos, usando el comando chmod
+#El  primer chmod lo hacemos usando el m茅todo octal, y decimos que todos los permisos para el due帽o, y ejecuci贸n para grupo y otros al archivo linux.etc
 chmod 711 linux.etc
-#Permisos completos para el due駉, lectura al grupo y cero permisos a los otros para el archivo Mis procesos.prs
+#Permisos completos para el due帽o, lectura al grupo y cero permisos a los otros para el archivo Mis procesos.prs
 chmod 740 Misprocesos.prs
-#Finalmente, tenemos el n鷐ero 5
-#Creamos un archivo vac韔 llamado todos.prm
+#Finalmente, tenemos el n煤mero 5
+#Creamos un archivo vac铆o llamado todos.prm
 touch todos.prm
-#Cambiamos los permisos mediante el m閠odo tradicional, usuario y otros con permisos de lectura, escritura y ejecuci髇, y el grupo con permisos de lectura, pero sin escritura y ejecuci髇
+#Cambiamos los permisos mediante el m茅todo tradicional, usuario y otros con permisos de lectura, escritura y ejecuci贸n, y el grupo con permisos de lectura, pero sin escritura y ejecuci贸n
 chmod uo+rwx,g+r-wx todos.prm
-#Creamos un archivo llamado grupo.prm y le damos permisos mediante el octal de ejecuci髇 y lectura al usuario, todos al grupo y cero a los otros
+#Creamos un archivo llamado grupo.prm y le damos permisos mediante el octal de ejecuci贸n y lectura al usuario, todos al grupo y cero a los otros
 touch grupo.prm
 chmod 570 grupo.prm
-#Finalmente, creamos el 鷏timo archivo llamado usuario.prm y le damos permisos de todo al usuario, y ejecuci髇 y lectura al grupo y a los otros
+#Finalmente, creamos el 煤ltimo archivo llamado usuario.prm y le damos permisos de todo al usuario, y ejecuci贸n y lectura al grupo y a los otros
 touch usuario.prm
 chmod 755 usuario.prm
