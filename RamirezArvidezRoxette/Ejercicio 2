@@ -1,0 +1,117 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "La combinatoria enumerativa estudia los métodos para contar (enumerar) las distintas configuraciones de los elementos de un conjunto que cumpla con ciertos criterios especificados. La siguiente expresión nos permite conocer dicho valor posible de configuraciones:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "$$\n",
+    "C_{n}^{r} = { \\frac {n!}{(n-r)!r!} }\n",
+    "$$"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Usamos la función de factorial antes descrita"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "factorialr (generic function with 1 method)"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "function factorialr(N) #Usamos el comando function para nombrar la función factorialr(N) con N, el número del que deseamos el factorial\n",
+    "    f = 1 #Asignamos a f =1 debido a que sabemos que el factorial de 0 es 1, es decir el primer resultado de efectuar la funci´ón arroja 1 y es la base para los siguientes resultados.. Por definición el factorial de N es el producto de los factores que preceden ese número\n",
+    "    for n ∈ 1:N #Generamos el ciclo for con una variable n la cuál tiene asignados los valores del intervalo 1 hasta N. \n",
+    "        f= f*n #le damos un nuevo valor a f que es igual al producto de su valor anterior por el valor que va tomando n, en el intervalo\n",
+    "    end #Cuando se ha llegado al valor límite del intervalo, se termina el ciclo.\n",
+    "    return f #Regresa el valor final de f para enlazarlo después a la función conbinatoria\n",
+    "end #Termina la función"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Nos apoyamos en ella para realizar la función combinatoria:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 72,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "combinatoriar (generic function with 1 method)"
+      ]
+     },
+     "execution_count": 72,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "function combinatoriar(n,r) #En este caso el usuario asigna dos valores, n y r \n",
+    "    c=factorialr(n)/(factorialr(n-r)*factorialr(r)) #Llamamos c a la operaci´on con el resultao final, en este caso pasamos exactamente la misma formula aplicando nuestro factorialr(N) y comprobamos\n",
+    "    println(c) #Imprime en la pantalla el resultado final e c\n",
+    "end      "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 73,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "combinatoriar(5,3) #Ejemplo. Es válido c:"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 0.6.0",
+   "language": "julia",
+   "name": "julia-0.6"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "0.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
