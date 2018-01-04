@@ -1,0 +1,122 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Función Potencia. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "El usuario asigana dos valores: n y p, con la intención de generar el producto \n",
+    "$$\n",
+    "{n^p}\n",
+    "$$"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Ptnc (generic function with 1 method)"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "function Ptnc(n,p)\n",
+    "    r=1 #Hacemos un r=1, que es la que irá modificandose con el ciclo for para obtner el resultado deseado. Obervar que 1 es el elemento neutro, regresano el mismo valor. r es arbitario, podría ser cualquier letra\n",
+    "    for i ∈ 1:p #Hacemos el ciclo for llamando a cada  elemento i, que pertenece al intervalo (1,p)\n",
+    "        r*=n #Mientras se toma un valor de (1,p), modifica r, cuyo valor será el producto inmediato anterior de r con n. Entonces el resultado de la potencia de un orden menor se está multiplicaando por la de un orden mayor, que es lo que se desea, hasta que se llegue al límite p. Por ello se cumple la función deseada.\n",
+    "    end\n",
+    "    println(r) #Sólo necesitamos conocer el resultado final de r, entonces ocupr println no generará problemas c:\n",
+    "    end #Termina <3"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1\n"
+     ]
+    }
+   ],
+   "source": [
+    "Ptnc(-1,4) #Reaizamos varias pruebas, una interesante es para (-1) que será negativo en impares y positivo en un par"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "-1\n"
+     ]
+    }
+   ],
+   "source": [
+    "Ptnc(-1,37) #¡Genial!"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "16\n"
+     ]
+    }
+   ],
+   "source": [
+    "Ptnc(2,4) #Jiji"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Julia 0.6.0",
+   "language": "julia",
+   "name": "julia-0.6"
+  },
+  "language_info": {
+   "file_extension": ".jl",
+   "mimetype": "application/julia",
+   "name": "julia",
+   "version": "0.6.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
