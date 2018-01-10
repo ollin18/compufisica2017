@@ -1,0 +1,5 @@
+﻿1-.)Navegue por el sistema de archivos: para este paso utilize el comando "cd /" al inicio, despues me meti en la carpeta que mas me llamara la atencion en este caso "/etc".
+2-.)Busque el contenido de algunos archivos: para esto use el comando "ls -a" para ver archivos completos, de ahí seleccione archivos de color verde claro para mas rapido, ya que estos indican archivos ejecutables.
+3-.)Copielos a su directorio personal: para esto primero cree una carpeta desde "/home/est7" con el comando "mkdir personal", después una vez encontrado el archivo de ejecucion que fue el que seleccione, tomando la ruta completa, con el comando "cp "ruta completa" "ruta de envio"", los pase a la carpeta peronal uno a uno.
+4-.)Para crear un directorio con la carpeta de hoy, use el comando "mkdir 23ago2017", pero para esto tenia que estar en "/home/est7" para que se creara ahí la carpeta.
+5-.)mueva los archivos copiados a ese directoro, para esto utilze el comando de "mv /home/est7/personal/"nombre del archivo" /home/est7/23ago2017" con esto movi los archivos uno a uno de una carpeta a otra.
