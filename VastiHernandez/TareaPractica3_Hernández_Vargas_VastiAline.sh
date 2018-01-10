@@ -5,5 +5,5 @@ cat bitacora.conx | less
 ifconfig
 touch red.conf
 mkdir Practica3
-tar -cvf Practica3_Hernandez_Vargas_VastiAline.tar Practica_3
+tar -cvf Practica3_Hernandez_Vargas_VastiAline.tar Practica3
 gzip -9 Practica3_Hernandez_Vargas_VastiAline.tar
