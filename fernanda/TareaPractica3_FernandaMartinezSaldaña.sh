@@ -8,4 +8,4 @@ ifconfig > red.conf #Mandamos el archivo con ifconfig nos dice el estado y las c
 ps -e | grep firefox    #Ps nos muestra un listado de forma sencilla
 kill -15 (ps -e | grep firefox | awk '{print $1}')   #Con kill matamos el proceso
 tar -cf Practica3_Fernanda_Martinez_Saldaña.tar  #Con tar empaquetamos un directorio
-gzip -9 Practica3_Fernanda_Martinez_Saldaña.tar. #Con gzip comprimimos el archivo en un nivel 9
+gzip -9 Practica3_Fernanda_Martinez_Saldaña.tar #Con gzip comprimimos el archivo en un nivel 9
