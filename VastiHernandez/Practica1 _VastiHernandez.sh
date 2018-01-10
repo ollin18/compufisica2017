@@ -1,4 +1,4 @@
- mkdir respaldo_sistema
+ mkdir respaldo_sistema 
          cd respaldo_sistema
          mkdir -p configuracion programas reinstalacion usuarios
          cd configuracion
