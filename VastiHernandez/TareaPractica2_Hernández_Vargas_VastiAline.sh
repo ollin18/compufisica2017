@@ -12,7 +12,7 @@ ls -la linux.etc
 chmod 740 MisProcesos.prs
 touch todos.prm | chmod u+rwx,g-wx,o+rxw todos.prm
 touch grupo.prm | chmod 570 grupo.prm
-touch usuario.prm | chmod 755 usuario.prm
+touch usuario.prm | chmod 755 usuario.prm 
 
 
 
