@@ -24,6 +24,6 @@ echo " a) rm -r /etc/apache2/ /var/www/
        b) cd /etc/firefox-3.5/porfile/
           ls
           mv bookmarks.html favoritos.resp
-       c) rm -r etc/*.conf"
+       c) rm -r etc/*.conf" 
 
 
