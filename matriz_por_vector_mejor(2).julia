@@ -1,0 +1,9 @@
+function mat_x_vec2(A,v)
+    if size(A)[2] == length(v)
+        vector_resultante = zeros(size(A)[1])
+        for renglon in 1:size(A)[1]
+            vector_resultante[renglon] = ProdInt(A[renglon,:],v)
+        end
+        vector_resultante
+    end
+end   
