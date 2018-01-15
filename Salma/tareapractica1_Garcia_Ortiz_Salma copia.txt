@@ -1,0 +1,44 @@
+echo "inciso 1 y 2"
+echo “para hacer la estructura primero creo un directorio el comando cd es para entrar a ese directorio con el primer comando de la misma manera creo 4 directorios mas de nuevo con cd ingreso a uno de ellos hago otros directorios”
+mkdir respaldo_sistema
+cd respaldo_sistema
+mkdir configuracion
+mkdir programas
+mkdir reinstalacion
+mkdir usuarios
+cd configuracion
+mkdir X11
+mkdir gnome
+Echo “para crear las otras carpetas ingreso con cd a gnome ahora con ../.. regreso hasta configuracion para poder ingresar a usuarios y crear los otros dos directorios”
+cd gnome
+cd ../..
+cd usuarios
+mkdir python
+cd python
+echo “utilizando la misma secuencia de cd y  ../.. ingreso a los directorios y con touch hago los archivos” 
+mkdir scripts
+cd ../..
+cd reinstalacion
+touch guia
+touch notas
+touch secuencia.data
+touch paquetes.pkg
+touch imagen.iso
+cd ../..
+cd respaldo_sistema
+Echo “para desplegar en la pantalla la lista de todo lo anterior utilizo el comando ls seguido con las letras lrt ya que cada una me ayudara a hacer una opción diferente, después copie los programas con cp.”
+ls -lRt
+
+cd programas
+cp /bin/* .
+
+cd ../..
+cd respaldo_sistema
+
+cd configuracion
+cd X11
+cp -riv /etc/X11/x* .
+ 
+echo" a) rm -r /etc/apache2 /var/www
+ b) mv /etc/firefox-3.5/profile/bookmarks.html favoritos.resp
+ c) rm /etc/*.conf"
